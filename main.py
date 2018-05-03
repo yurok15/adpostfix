@@ -9,6 +9,7 @@ import time
 # 1. Remove message
 # 2. arg parser
 # 3. configuration
+# 4. Send message from 3-d party provider
 ####
 
 username = "yzhigulskiy@OPS-EXCH154-W.hostpilot.com"
