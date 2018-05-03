@@ -4,6 +4,7 @@ import smtplib
 import random
 from poplib import POP3_SSL
 import time
+import dns.resolver
 ####
 #To-do list
 # 1. Remove message
@@ -17,13 +18,17 @@ host = "mail154-1.exch154.serverdata.net"
 password = "Gfhjkm951"
 msg_id = random.randint(1000000, 10000000000)
 
+def get_mx(host):
+    answer = dns.resolver.query(host.split('@')[1], 'MX')
+    return answer[0].exchange.to_text()
+
 def send_msg():
     print("\n     SMTP testing")
     fromaddr = "yurok15@gmail.com"
     toaddrs = "yzhigulskiy@OPS-EXCH154-W.hostpilot.com"
     msg = ("Subject: %s" % (msg_id))
     try:
-        server = smtplib.SMTP('west.smtp.mx.exch154.serverdata.net')
+        server = smtplib.SMTP(get_mx(toaddrs))
         server.sendmail(fromaddr, toaddrs, msg)
         server.quit()
         print("OK - Messages with msg_id %s was sent " % msg_id)
