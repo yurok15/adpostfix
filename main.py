@@ -4,7 +4,12 @@ import smtplib
 import random
 from poplib import POP3_SSL
 import time
-
+####
+#To-do list
+# 1. Remove message
+# 2. arg parser
+# 3. configuration
+####
 
 username = "yzhigulskiy@OPS-EXCH154-W.hostpilot.com"
 host = "mail154-1.exch154.serverdata.net"
