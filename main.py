@@ -15,7 +15,7 @@ import dns.resolver
 
 username = "yzhigulskiy@OPS-EXCH154-W.hostpilot.com"
 host = "mail154-1.exch154.serverdata.net"
-password = "Gfhjkm951"
+password = ""
 msg_id = random.randint(1000000, 10000000000)
 
 def get_mx(host):
