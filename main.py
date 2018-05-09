@@ -13,8 +13,8 @@ import dns.resolver
 # 4. Send message from 3-d party provider
 ####
 
-username = "yzhigulskiy@OPS-EXCH154-W.hostpilot.com"
-host = "mail154-1.exch154.serverdata.net"
+username = ""
+host = ""
 password = ""
 msg_id = random.randint(1000000, 10000000000)
 
@@ -24,8 +24,8 @@ def get_mx(host):
 
 def send_msg():
     print("\n     SMTP testing")
-    fromaddr = "yurok15@gmail.com"
-    toaddrs = "yzhigulskiy@OPS-EXCH154-W.hostpilot.com"
+    fromaddr = ""
+    toaddrs = ""
     msg = ("Subject: %s" % (msg_id))
     try:
         server = smtplib.SMTP(get_mx(toaddrs))
